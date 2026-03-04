@@ -241,6 +241,12 @@ public class Info extends DockerObject implements Serializable {
     @JsonProperty("SecurityOptions")
     private List<String> securityOptions;
 
+    @JsonProperty("MaskedPaths")
+    private List<String> maskedPaths;
+
+    @JsonProperty("ReadonlyPaths")
+    private List<String> readonlyPaths;
+
     @JsonProperty("Runtimes")
     private Map<String, RuntimeInfo> runtimes;
 
@@ -1120,6 +1126,30 @@ public class Info extends DockerObject implements Serializable {
      */
     public Info withSecurityOptions(List<String> securityOptions) {
         this.securityOptions = securityOptions;
+        return this;
+    }
+
+    /**
+     * @see #maskedPaths
+     */
+    public List<String> getMaskedPaths() {
+        return maskedPaths;
+    }
+
+    public Info withMaskedPaths(List<String> maskedPaths) {
+        this.maskedPaths = maskedPaths;
+        return this;
+    }
+
+    /**
+     * @see #readonlyPaths
+     */
+    public List<String> getReadonlyPaths() {
+        return readonlyPaths;
+    }
+
+    public Info withReadonlyPaths(List<String> readonlyPaths) {
+        this.readonlyPaths = readonlyPaths;
         return this;
     }
 

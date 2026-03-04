@@ -244,6 +244,12 @@ public class HostConfig extends DockerObject implements Serializable {
     @JsonProperty("SecurityOpt")
     private List<String> securityOpts;
 
+    @JsonProperty("MaskedPaths")
+    private List<String> maskedPaths;
+
+    @JsonProperty("ReadonlyPaths")
+    private List<String> readonlyPaths;
+
     @JsonProperty("StorageOpt")
     private Map<String, String> storageOpt;
 
@@ -510,6 +516,20 @@ public class HostConfig extends DockerObject implements Serializable {
     @CheckForNull
     public List<String> getSecurityOpts() {
         return securityOpts;
+    }
+
+    /**
+     * @see #maskedPaths
+     */
+    public List<String> getMaskedPaths() {
+        return maskedPaths;
+    }
+
+    /**
+     * @see #readonlyPaths
+     */
+    public List<String> getReadonlyPaths() {
+        return readonlyPaths;
     }
 
     /**
@@ -984,6 +1004,22 @@ public class HostConfig extends DockerObject implements Serializable {
      */
     public HostConfig withSecurityOpts(List<String> securityOpts) {
         this.securityOpts = securityOpts;
+        return this;
+    }
+
+    /**
+     * @see #maskedPaths
+     */
+    public HostConfig withMaskedPaths(List<String> maskedPaths) {
+        this.maskedPaths = maskedPaths;
+        return this;
+    }
+
+    /**
+     * @see #readonlyPaths
+     */
+    public HostConfig withReadonlyPaths(List<String> readonlyPaths) {
+        this.readonlyPaths = readonlyPaths;
         return this;
     }
 
